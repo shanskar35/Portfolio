@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local Node portable env
+.node/
+node_temp/
+node-portable.zip
