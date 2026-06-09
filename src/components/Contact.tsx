@@ -14,7 +14,7 @@ export const Contact: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       audio.playError();
@@ -30,28 +30,68 @@ export const Contact: React.FC = () => {
       'ENCRYPTING DATA CORRECTIONS FOR SECURE CHANNEL...',
       'ACQUIRING AWS CLOUD GATEWAY NODE...',
       'HANDSHAKE VERIFICATION STABLE... UPLOADING PAYLOADS...',
-      'TRANSMISSION SUCCESSFUL! DISCONNECTING SECURE SESSION.',
     ];
 
+    // Trigger Web3Forms submit immediately in the background
+    const apiPromise = (async () => {
+      const fData = new FormData();
+      fData.append("access_key", "86246c83-118c-4cff-ac90-8acf7f6d04f9");
+      fData.append("name", formData.name);
+      fData.append("email", formData.email);
+      fData.append("org", formData.org);
+      fData.append("message", formData.message);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: fData
+        });
+        const resultData = await response.json();
+        return resultData.success;
+      } catch (err) {
+        console.error("Web3Forms submission error", err);
+        return false;
+      }
+    })();
+
+    // Run the visual logs sequence
     logSteps.forEach((step, idx) => {
       setTimeout(() => {
         setStatusLogs((prev) => [...prev, `[${new Date().toLocaleTimeString()}] ${step}`]);
         audio.playKey();
-        
-        if (idx === logSteps.length - 1) {
-          setSending(false);
-          setSentSuccess(true);
-          audio.playSuccess();
-          // Burst confetti
-          confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 },
-            colors: ['#00f0ff', '#0072ff', '#bc13fe'],
-          });
-        }
       }, (idx + 1) * 800);
     });
+
+    // Final check step
+    setTimeout(async () => {
+      setStatusLogs((prev) => [...prev, `[${new Date().toLocaleTimeString()}] INITIATING PORTAL TRANSMISSION...`]);
+      audio.playKey();
+      
+      const success = await apiPromise;
+      
+      setTimeout(() => {
+        if (success) {
+          setStatusLogs((prev) => [...prev, `[${new Date().toLocaleTimeString()}] TRANSMISSION SUCCESSFUL! DISCONNECTING SECURE SESSION.`]);
+          audio.playSuccess();
+          setTimeout(() => {
+            setSending(false);
+            setSentSuccess(true);
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.6 },
+              colors: ['#00f0ff', '#0072ff', '#bc13fe'],
+            });
+          }, 800);
+        } else {
+          setStatusLogs((prev) => [...prev, `[${new Date().toLocaleTimeString()}] ERROR: TRANSMISSION GATEWAY HANDSHAKE REFUSED. CONFIG CORRUPTED.`]);
+          audio.playError();
+          setTimeout(() => {
+            setSending(false);
+          }, 1500);
+        }
+      }, 800);
+    }, (logSteps.length + 1) * 800);
   };
 
   const resetTransmission = () => {
