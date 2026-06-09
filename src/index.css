@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-cyan-glow: #00f0ff;
+  --color-blue-glow: #0072ff;
+  --color-purple-glow: #bc13fe;
+  --color-space-black: #030712;
+  --color-cyber-dark: #050508;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #030508;
+    color: #e2e8f0;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(3, 5, 8, 0.9);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.6);
+  }
+}
+
+/* Custom Styles & Utilities */
+
+.glass-panel {
+  background: rgba(5, 7, 12, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+              inset 0 0 12px rgba(0, 240, 255, 0.05);
+}
+
+.glass-panel-purple {
+  background: rgba(5, 7, 12, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(188, 19, 254, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+              inset 0 0 12px rgba(188, 19, 254, 0.05);
+}
+
+.glass-panel-blue {
+  background: rgba(5, 7, 12, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 114, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+              inset 0 0 12px rgba(0, 114, 255, 0.05);
+}
+
+/* Glowing text effects */
+.text-glow-cyan {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 8px rgba(188, 19, 254, 0.6), 0 0 20px rgba(188, 19, 254, 0.3);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 8px rgba(0, 114, 255, 0.6), 0 0 20px rgba(0, 114, 255, 0.3);
+}
+
+/* Glowing border effects */
+.border-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 0 8px rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.6);
+}
+
+.border-glow-purple {
+  box-shadow: 0 0 15px rgba(188, 19, 254, 0.25), inset 0 0 8px rgba(188, 19, 254, 0.1);
+  border-color: rgba(188, 19, 254, 0.6);
+}
+
+.border-glow-blue {
+  box-shadow: 0 0 15px rgba(0, 114, 255, 0.25), inset 0 0 8px rgba(0, 114, 255, 0.1);
+  border-color: rgba(0, 114, 255, 0.6);
+}
+
+/* Scanline animation */
+.scanner-line {
+  position: relative;
+  overflow: hidden;
+}
+.scanner-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 240, 255, 0.0) 45%,
+    rgba(0, 240, 255, 0.1) 50%,
+    rgba(0, 240, 255, 0.0) 55%,
+    transparent 100%
+  );
+  animation: scan 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Cyberpunk grid background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Hexagon background pattern */
+.cyber-hex {
+  background-color: #030508;
+  background-image: radial-gradient(rgba(0, 240, 255, 0.15) 1px, transparent 0), radial-gradient(rgba(188, 19, 254, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Corner brackets for HUD panels */
+.hud-corner {
+  position: relative;
+}
+.hud-corner::before,
+.hud-corner::after,
+.hud-corner > .hud-inner-corner::before,
+.hud-corner > .hud-inner-corner::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(0, 240, 255, 0.5);
+  border-style: solid;
+  pointer-events: none;
+}
+/* Top Left */
+.hud-corner::before {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+/* Top Right */
+.hud-corner::after {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+/* Bottom Left */
+.hud-corner > .hud-inner-corner::before {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+/* Bottom Right */
+.hud-corner > .hud-inner-corner::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+/* Matrix character rain container styling */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Orbiting animations */
+@keyframes orbit-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-ccw {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+.animate-orbit-cw {
+  animation: orbit-cw 60s linear infinite;
+}
+.animate-orbit-ccw {
+  animation: orbit-ccw 80s linear infinite;
+}
+
+/* Custom interactive cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  mix-blend-mode: difference;
+}
+.custom-cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(0, 240, 255, 0.8);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+.cursor-hover {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 240, 255, 0.1);
+  border-color: rgba(188, 19, 254, 0.8);
+}
