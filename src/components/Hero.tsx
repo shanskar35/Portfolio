@@ -214,7 +214,7 @@ export const Hero: React.FC<HeroProps> = ({ performanceMode, soundEnabled, onCon
               </li>
               <li className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-glow" />
-                AI Agents & Pipelines
+                Computer Vision Models
               </li>
             </ul>
           </div>
@@ -277,7 +277,7 @@ export const Hero: React.FC<HeroProps> = ({ performanceMode, soundEnabled, onCon
             <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-cyan-glow to-transparent mb-6 mx-auto" />
 
             <p className="text-sm text-slate-300 leading-relaxed font-sans max-w-md mx-auto mb-8">
-              Welcome back to the Command Dashboard. I design and build highly scalable backend engines, distributed cloud systems, and intelligent automation frameworks. Exploring the next frontier in developer engineering.
+              Welcome back to the Command Dashboard. I design and build highly scalable backend engines, distributed cloud systems, and deep learning pipelines for computer vision. Exploring the next frontier in developer engineering.
             </p>
 
             {/* Quick social CTAs */}

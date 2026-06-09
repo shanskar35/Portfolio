@@ -42,14 +42,14 @@ LINKEDIN: https://www.linkedin.com/in/shanskarsarraf/
 SUMMARY:
 Motivated software developer experienced in building real-time multiplayer systems,
 WebSocket communication networks, transactional microservices, and automated
-ETL cloud data pipelines. Passionate about system latency, microservices, and AI integrations.
+ETL cloud data pipelines. Passionate about system latency, microservices, and computer vision.
 
 CORE TECHNOLOGY CONSTELLATIONS:
 --------------------------------------------------------------------
 [BACKEND SYSTEMS]   - Java, Spring Boot, REST APIs, Microservices, WebSockets, Node.js
 [DATABASES & CACHE] - PostgreSQL, MongoDB, SQL Pool Tuning, Cache Layers
 [CLOUD & DEVOPS]    - AWS Cloud, ECS, ECR, S3, IAM, CloudWatch, Lambda
-[AI & AUTOMATION]   - Python, PyTorch, Computer Vision, OpenAI APIs, LangChain
+[AI & COMPUTER VISION] - Python, PyTorch, Computer Vision, OpenCV, ResNet
 [DEVELOPER TOOLS]   - Git, GitHub, Postman, Linux Command Shells, VS Code
 
 CAREER CHRONOLOGY:

@@ -182,7 +182,7 @@ export const SystemProfile: React.FC = () => {
                       </div>
                       <div className="flex gap-2">
                         <span className="text-purple-glow font-bold">[02]</span>
-                        <span>INTELLIGENT PIPELINES: Leverage OpenAI API, LangChain pipelines, and vector databases to create automated workflows.</span>
+                        <span>COMPUTER VISION RESEARCH: Build deep learning convolutional pipelines for road object detection and real-time image segmentation.</span>
                       </div>
                       <div className="flex gap-2">
                         <span className="text-purple-glow font-bold">[03]</span>

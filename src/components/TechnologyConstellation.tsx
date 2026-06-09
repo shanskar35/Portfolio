@@ -65,15 +65,15 @@ export const TechnologyConstellation: React.FC = () => {
     },
     {
       id: 'ai',
-      name: 'AI & AUTOMATION',
+      name: 'AI & COMPUTER VISION',
       color: '#10b981', // emerald
-      description: 'Developing LLM pipelines, autonomous agents, and scripting engines.',
+      description: 'Researching convolutional neural networks and real-time image segmentation.',
       skills: [
         { name: 'Python', level: 85 },
-        { name: 'OpenAI APIs', level: 80 },
-        { name: 'LangChain', level: 75 },
-        { name: 'AI Agents', level: 75 },
-        { name: 'Automation', level: 80 },
+        { name: 'PyTorch', level: 85 },
+        { name: 'Computer Vision', level: 80 },
+        { name: 'OpenCV', level: 80 },
+        { name: 'ResNet / CNNs', level: 75 },
       ],
     },
     {

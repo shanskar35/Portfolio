@@ -97,7 +97,7 @@ export const CommandConsole: React.FC<CommandConsoleProps> = ({
         response = [
           'COMPILING SKILL CONSTELLATION INTELLIGENCE...',
           'PRIMARY: Java, Spring Boot, REST APIs, PostgreSQL, AWS Cloud',
-          'SECONDARY: Python, AI Agents, React, TS, Git Shell',
+          'SECONDARY: Python, Computer Vision, React, TS, Git Shell',
           'Redirecting to skills section...',
         ];
         setTimeout(() => onSectionSelect('skills'), 1200);

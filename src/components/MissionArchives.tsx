@@ -5,7 +5,7 @@ import { Shield, ExternalLink, Github, Filter, Target, Award, Database } from 'l
 interface Project {
   id: string;
   name: string;
-  category: 'backend' | 'ai' | 'cloud' | 'automation' | 'fullstack';
+  category: 'backend' | 'ai' | 'cloud' | 'fullstack';
   overview: string;
   features: string[];
   tech: string[];
@@ -22,8 +22,7 @@ export const MissionArchives: React.FC = () => {
     { id: 'all', label: 'ALL_MISSIONS' },
     { id: 'backend', label: 'BACKEND' },
     { id: 'cloud', label: 'CLOUD_ENG' },
-    { id: 'ai', label: 'AI_AGENTIC' },
-    { id: 'automation', label: 'AUTOMATION' },
+    { id: 'ai', label: 'AI_VISION' },
   ];
 
   const projects: Project[] = [
