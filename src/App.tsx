@@ -178,6 +178,12 @@ function App() {
       {/* Background visual components */}
       <div className="absolute inset-0 cyber-grid opacity-10 pointer-events-none" />
 
+      {/* Cybernetic robotic girl background illustration */}
+      <div 
+        className="fixed bottom-0 right-0 w-[350px] sm:w-[500px] md:w-[600px] h-[500px] sm:h-[700px] md:h-[800px] pointer-events-none opacity-[0.05] md:opacity-[0.07] mix-blend-screen bg-contain bg-no-repeat bg-right-bottom z-0"
+        style={{ backgroundImage: `url('/robotic_girl_bg.png')` }}
+      />
+
       {/* Floating Canvas Cursor Trail */}
       <canvas
         ref={cursorCanvasRef}
