@@ -30,52 +30,12 @@ function App() {
   // Resume Download Handler
   useEffect(() => {
     const handleDownload = () => {
-      const dossierText = `====================================================================
-SHANSKAR KUMAR SARRAF (SANTU SARRAF) - PROFESSIONAL ENGINEER DOSSIER
-====================================================================
-ROLE: Software Engineer / Backend Developer / Cloud Engineer
-COORDINATES: Bhubaneswar, Odisha, India
-EDUCATION: B.Tech in Computer Science Engineering, KIIT University (2026)
-GITHUB: https://github.com/shanskar35
-LINKEDIN: https://www.linkedin.com/in/shanskarsarraf35/
-
-SUMMARY:
-Motivated software developer experienced in building real-time multiplayer systems,
-WebSocket communication networks, transactional microservices, and automated
-ETL cloud data pipelines. Passionate about system latency, microservices, and computer vision.
-
-CORE TECHNOLOGY CONSTELLATIONS:
---------------------------------------------------------------------
-[BACKEND SYSTEMS]   - Java, Spring Boot, REST APIs, Microservices, WebSockets, Node.js
-[DATABASES & CACHE] - PostgreSQL, MongoDB, SQL Pool Tuning, Cache Layers
-[CLOUD & DEVOPS]    - AWS Cloud, ECS, ECR, S3, IAM, CloudWatch, Lambda
-[AI & COMPUTER VISION] - Python, PyTorch, Computer Vision, OpenCV, ResNet
-[DEVELOPER TOOLS]   - Git, GitHub, Postman, Linux Command Shells, VS Code
-
-CAREER CHRONOLOGY:
---------------------------------------------------------------------
-1. Software Developer Intern (Backend Engineering)
-   - Built WebSockets servers for real-time multiplayer board gameplay.
-   - Designed priority queues for matchmaking services and tournament leaderboards.
-   - Leveraged AWS ECS/ECR for secure cloud containers deployments.
-   
-2. AWS Data Engineering & Pipeline Training
-   - Programmed Glue crawler schemas, Lambda scripts, and S3 data lake aggregations.
-   - Automated serverless logs analysis via AWS Redshift arrays and Step Functions.
-
-====================================================================
-DOSSIER AUTHENTICATION STATUS: VERIFIED Payloads // OS-SECURE
-====================================================================`;
-
-      const blob = new Blob([dossierText], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url;
-      a.download = 'shanskar_sarraf_dossier.txt';
+      a.href = '/resume.pdf';
+      a.download = 'shanskar_sarraf_resume.pdf';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      URL.revokeObjectURL(url);
     };
 
     window.addEventListener('ai-download-resume', handleDownload);
