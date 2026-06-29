@@ -82,6 +82,13 @@ DOSSIER AUTHENTICATION STATUS: VERIFIED Payloads // OS-SECURE
     return () => window.removeEventListener('ai-download-resume', handleDownload);
   }, []);
 
+  // Reset scroll to top when intro completes
+  useEffect(() => {
+    if (introComplete) {
+      window.scrollTo(0, 0);
+    }
+  }, [introComplete]);
+
   // Section Tracking via Intersection Observer
   useEffect(() => {
     if (!introComplete) return;

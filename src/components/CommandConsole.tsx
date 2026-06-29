@@ -33,9 +33,14 @@ export const CommandConsole: React.FC<CommandConsoleProps> = ({
   ]);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const terminalEndRef = useRef<HTMLDivElement | null>(null);
+  const isFirstRender = useRef(true);
 
   // Scroll to bottom of terminal
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [history]);
 
