@@ -36,8 +36,8 @@ SHANSKAR KUMAR SARRAF (SANTU SARRAF) - PROFESSIONAL ENGINEER DOSSIER
 ROLE: Software Engineer / Backend Developer / Cloud Engineer
 COORDINATES: Bhubaneswar, Odisha, India
 EDUCATION: B.Tech in Computer Science Engineering, KIIT University (2026)
-GITHUB: https://github.com/Santu-Sarraf
-LINKEDIN: https://www.linkedin.com/in/shanskarsarraf/
+GITHUB: https://github.com/shanskar35
+LINKEDIN: https://www.linkedin.com/in/shanskarsarraf35/
 
 SUMMARY:
 Motivated software developer experienced in building real-time multiplayer systems,

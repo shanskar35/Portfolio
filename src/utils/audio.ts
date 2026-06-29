@@ -2,6 +2,17 @@ class SoundManager {
   private ctx: AudioContext | null = null;
   private muted: boolean = true; // Default muted to ensure user-interaction safety
 
+  constructor() {
+    this.setMuted = this.setMuted.bind(this);
+    this.isMuted = this.isMuted.bind(this);
+    this.playBlip = this.playBlip.bind(this);
+    this.playHover = this.playHover.bind(this);
+    this.playSuccess = this.playSuccess.bind(this);
+    this.playError = this.playError.bind(this);
+    this.playStartup = this.playStartup.bind(this);
+    this.playKey = this.playKey.bind(this);
+  }
+
   private getContext(): AudioContext {
     if (!this.ctx) {
       // @ts-ignore

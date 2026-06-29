@@ -154,16 +154,16 @@ export const CommandConsole: React.FC<CommandConsoleProps> = ({
         break;
 
       case 'github':
-        response = ['TARGET LOCK FOUND: https://github.com/Santu-Sarraf. Redirecting...'];
+        response = ['TARGET LOCK FOUND: https://github.com/shanskar35. Redirecting...'];
         setTimeout(() => {
-          window.open('https://github.com/Santu-Sarraf', '_blank');
+          window.open('https://github.com/shanskar35', '_blank');
         }, 1500);
         break;
 
       case 'linkedin':
-        response = ['GRID LOCK LOCATED: linkedin.com/in/shanskarsarraf. Redirecting...'];
+        response = ['GRID LOCK LOCATED: linkedin.com/in/shanskarsarraf35. Redirecting...'];
         setTimeout(() => {
-          window.open('https://www.linkedin.com/in/shanskarsarraf/', '_blank');
+          window.open('https://www.linkedin.com/in/shanskarsarraf35/', '_blank');
         }, 1500);
         break;
 

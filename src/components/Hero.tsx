@@ -285,7 +285,7 @@ export const Hero: React.FC<HeroProps> = ({ performanceMode, soundEnabled, onCon
               
               {/* GitHub */}
               <a
-                href="https://github.com/Santu-Sarraf"
+                href="https://github.com/shanskar35"
                 target="_blank"
                 rel="noreferrer"
                 onClick={handleActionClick}
@@ -298,7 +298,7 @@ export const Hero: React.FC<HeroProps> = ({ performanceMode, soundEnabled, onCon
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/shanskarsarraf/"
+                href="https://www.linkedin.com/in/shanskarsarraf35/"
                 target="_blank"
                 rel="noreferrer"
                 onClick={handleActionClick}

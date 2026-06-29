@@ -42,8 +42,8 @@ export const MissionArchives: React.FC = () => {
         { label: 'SOCKET_PING', value: '<45ms' },
         { label: 'CONCURRENT_USERS', value: '10k+' },
       ],
-      githubUrl: 'https://github.com/Santu-Sarraf',
-      demoUrl: 'https://github.com/Santu-Sarraf',
+      githubUrl: 'https://github.com/shanskar35',
+      demoUrl: 'https://github.com/shanskar35',
       architectureType: 'game',
     },
     {
@@ -61,7 +61,7 @@ export const MissionArchives: React.FC = () => {
         { label: 'MODEL_ACCURACY', value: '75% mIoU' },
         { label: 'INFERENCE_SPEED', value: '50 FPS' },
       ],
-      githubUrl: 'https://github.com/Santu-Sarraf',
+      githubUrl: 'https://github.com/shanskar35',
       architectureType: 'cv',
     },
     {
@@ -80,7 +80,7 @@ export const MissionArchives: React.FC = () => {
         { label: 'DATA_PROCESSED', value: '5 TB/Day' },
         { label: 'TRANSFORM_COST', value: '-40%' },
       ],
-      githubUrl: 'https://github.com/Santu-Sarraf',
+      githubUrl: 'https://github.com/shanskar35',
       architectureType: 'etl',
     },
   ];
